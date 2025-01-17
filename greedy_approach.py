@@ -35,7 +35,7 @@ class Coin:
 coins = [1, 5, 11]
 target = 15
 
-# Create an instance of the CoinsGreedy class
+# Create an instance of the Coin class
 coin1 = Coin()
 coin1.coins(coins)
 
