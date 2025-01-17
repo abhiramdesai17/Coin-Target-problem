@@ -40,5 +40,27 @@ coin1 = Coin()
 coin1.coins(coins)
 
 # Get the result for the given target using greedy approach
-output_greedy = coin1.value(target)
-print("Greedy Approach Output:", output_greedy)
+output = coin1.value(target)
+print("Output:", output)
+
+
+# Explanation of why Greedy Approach is incorrect in this case:
+#
+#  In this case, the greedy approach chooses the largest denomination (11) first and subtracts it from the target (15).
+#  This leaves us with 4. The greedy approach now chooses the largest coin smaller than 4, which is 1.
+#  It then selects 1 coin of denomination 1 four times, resulting in the solution {11: 1, 1: 4}.
+#  The greedy approach gives a result of 5 coins: 1 coin of denomination 11 and 4 coins of denomination 1.
+#
+# Why This Doesn't Work:
+# 
+# 1. The greedy approach doesn't always find the minimum number of coins, because it only looks for the best option at each step, 
+#    without considering the overall optimal solution.
+# 2. In this case, the optimal solution (which can be found using Dynamic Programming) would be 3 coins: 
+#    3 coins of 5. This would result in a total of 3 coins, rather than 5.
+# 3. Greedy fails to see that using three 5 coins would minimize the total number of coins. This is why this approach isn't suitable 
+#    for this problem where the denominations are not multiples of each other or not in a structured pattern.
+
+# Conclusion:
+# The greedy approach works for problems where coin denominations are structured in a way that larger coins are always optimal 
+# at each step. But in cases like this, where the denominations are not multiples of each other (e.g., 1, 5, 11), the greedy 
+# approach can lead to suboptimal results.
