@@ -65,7 +65,7 @@ class Coin:
         # Return the result dictionary containing the denominations and their counts
         return result
     
-# Example Usage of Backtracking Solution
+# Example Usage of DP Solution
 coins = [1, 5, 11]
 target = 15
 
@@ -73,14 +73,14 @@ target = 15
 coin1 = Coin()
 coin1.coins(coins)
 
-# Get the result for the given target using backtracking approach
+# Get the result for the given target using DP approach
 output = coin1.value(target)
 print("Output:", output)
 
 
 #  Output: {5: 3}
 #  Explanation:
-#  The 'value' method uses dynamic programming and backtracking to find the minimum coins required
+#  The 'value' method uses dynamic programming to find the minimum coins required
 #  to achieve the target amount of 15.
 #  In this case, it finds that the optimal solution is to use three coins of denomination 5:
 #  5 + 5 + 5 = 15, which is the target amount.
@@ -88,6 +88,6 @@ print("Output:", output)
 #
 #  This approach is better than greedy because it ensures that the solution uses the minimum number of coins.
 #  For example, if we used the greedy approach, it would attempt to take one coin of 11 first, 
-#  and then use 4 coins of 1, which is suboptimal. The backtracking approach explores all possibilities
+#  and then use 4 coins of 1, which is suboptimal. The DP approach explores all possibilities
 #  and returns the optimal solution, ensuring the minimum coins are used.
 
