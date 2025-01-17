@@ -7,7 +7,7 @@ class Coin:
     def value(self, value):
         
         # Create a DP table to store the minimum coins required for each amount
-        # dp[i] represents the minimum coins required to achieve amount i
+        # arr[i] represents the minimum coins required to achieve amount i
 
         # Initialize with infinity (unreachable state)
         arr = [float('inf')] * (value + 1)
@@ -21,7 +21,7 @@ class Coin:
         # Dictionary to store the coin used to achieve each amount
         used = {}  # Initialize an empty dictionary to track coins used
 
-        # Fill the DP table for all amounts from 1 to the target
+        # Fill the table for all amounts from 1 to the target value
 
         # Iterate through all possible target amounts
         for i in range(1, value + 1):  
@@ -35,7 +35,7 @@ class Coin:
                     arr[i] = arr[i - coin] + 1  
                     used[i] = coin  # Store the coin used to achieve amount t
 
-        # If dp[target] is still infinity, it means the target cannot be achieved
+        # If arr[value] is still infinity, it means the target value cannot be achieved
         if arr[value] == float('inf'):
             return {}
 
